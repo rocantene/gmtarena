@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <title>GMT Arena</title>
   </head>
   <body>
@@ -32,9 +32,9 @@
           </label>
         </div>
         <div class="toggle-descr">
-          <span>AZ</span>
+          <span class="toggle-az">AZ</span>
           <span>/</span>
-          <span>RU</span>
+          <span class="toggle-ru">RU</span>
         </div>
       </div>
         </div>
@@ -68,19 +68,16 @@
                   <clipPath id="clip0_26_777">
                     <rect width="115" height="42" fill="white"/>
                   </clipPath>
-                </defs>
-              </svg>
-            <div id="timer" class="main-timer">
-            </div>
+                </defs></svg>
+                <div class="main-timer" id="timer"></div>
           </div>
-            </div>
-        </div>
+          </div>
       </div>
     </header>
     <main>
         <section class="about">
           <div class="main-container">
-            <h2 class="about-tittle"data-lang-toggle="GMT Arena - это">GMT Arena-da sizi nələr gözləyir:
+            <h2 class="about-tittle"data-lang-toggle="GMT Arena - это">GMT Arena-da sİzİ nələr gözləyİr:
             </h2>
             <div class="about-list">
               <div class="about-item">
@@ -97,15 +94,15 @@
             </div>
             <div class="about-item">
               <div class="about-icon"><img src="images/icons//coffee.svg" alt="coffee"></div>
-              <div class="about-text"><span data-lang-toggle="coffee">dadlı kofe, sendviçlər və desertlər olan kofe bar</span></div>
+              <div class="about-text"><span data-lang-toggle="coffee">dadli kofe, sendviçlər və desertlər olan kofe bar</span></div>
           </div>
           <div class="about-item">
             <div class="about-icon"><img src="images/icons/tv.svg" alt="TV"></div>
-            <div class="about-text"> <span data-lang-toggle="tv">böyük ekranlarda dünya turnirlərinə baxmaq üçün məkan</span> </div>
+            <div class="about-text"> <span data-lang-toggle="tv">böyük ekranlarda dünya turnİrlərİnə baxmaq üçün məkan</span> </div>
           </div>
           <div class="about-item">
             <div class="about-icon"><img src="images/icons/notebook.svg" alt="notebook"></div>
-            <div class="about-text"> <span data-lang-toggle="notebook">noutbukda işləmək üçün rahat yerlər</span></div>
+            <div class="about-text"> <span data-lang-toggle="notebook">noutbukda İşləmək üçün rahat yerlər</span></div>
         </div>
         <div class="about-item">
           <div class="about-icon"><img src="images/icons/puzzle.svg" alt="puzzle"></div>
@@ -116,7 +113,7 @@
         </section>
         <section class="event">
           <div class="main-container">
-              <h2 class="event-tittle" data-lang-toggle="event">Açılışda sizi nə gözləyir:</h2>
+              <h2 class="event-tittle" data-lang-toggle="event">Açilişda sİzİ nə gözləyİr:</h2>
               <div class="event-list">
                 <ul>
                   <li data-lang-toggle="event-pc">yeni güclü kompüterlər və PlayStation 5 ilə tanış olmaq imkanı</li>
@@ -129,13 +126,15 @@
           </div>
         </section>
         <section class="address">
-          <div class="main-container">
-              <h1 class="address-title" data-lang-toggle="address-title">6 yanvar saat 17:00</h1>
-              <h3 class="address-subtitle" data-lang-toggle="address-subtitle">Sizi gözləyirik</h3>
-            <div class="address-map">
-              <h2 class="map-title"data-lang-toggle="map-title">Ünvan:</h2>
-              <h2 class="map-subtitle" data-lang-toggle="map-subtitle">Bakı şəhəri, Tərlan Əliyarbəyov küç 6</h2>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d189.98677566375406!2d49.83909259977839!3d40.36921576391253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307db6ab545a65%3A0x77f2e592a930a0ee!2zNiBUyZlybGFuIMaPbGl5YXJiyZl5b3YsIEJha8SxIDEwMDUsINCQ0LfQtdGA0LHQsNC50LTQttCw0L0!5e0!3m2!1sru!2suk!4v1703356058308!5m2!1sru!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="main-container">
+              <div class="address-wrapper">
+                <h1 class="address-title" data-lang-toggle="address-title">12 yanvar saat 17:00</h1>
+                <h3 class="address-subtitle" data-lang-toggle="address-subtitle">Sİzİ gözləyİrİk</h3>
+              <div class="address-map">
+                <h2 class="map-title"data-lang-toggle="map-title">Ünvan:</h2>
+                <h2 class="map-subtitle" data-lang-toggle="map-subtitle">Bakı şəhəri, Tərlan Əliyarbəyov küç 6</h2>
+                <iframe id="myIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1519.8969531574428!2d49.83871440834676!3d40.36909391781341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d410ad4f0c3%3A0xfc860b5dfbdf2cc2!2sGMT%20Arena!5e0!3m2!1saz!2saz!4v1703774112886!5m2!1saz!2saz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
             </div>
           </div>
         </section>
@@ -143,21 +142,21 @@
     <footer class="footer">
       <div class="main-container">
         <div class="footer__inner">
-          <div class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="104" height="52" viewBox="0 0 104 52" fill="none">
-              <path d="M8.50529 34.6393H13.4195L21.7176 51.5833H17.1285L15.5756 48.2916H6.48971L4.93683 51.5833H0.208649L8.5068 34.6393H8.50529ZM8.11063 44.8381H13.929L11.0077 38.6719L8.11063 44.8381Z" fill="white"/>
-              <path d="M28.047 45.9736V51.5833H23.5033V34.6393H34.1194C34.9691 34.6393 35.7842 34.7058 36.5644 34.8359C37.3446 34.9674 38.0356 35.2229 38.6389 35.601C39.2422 35.9805 39.72 36.5173 40.0754 37.2113C40.4307 37.9068 40.6091 38.811 40.6091 39.9239C40.6091 40.8977 40.47 41.7081 40.1918 42.3583C39.9136 43.0085 39.5265 43.5332 39.032 43.9339C39.5567 44.197 39.971 44.5644 40.2719 45.0346C40.5728 45.5064 40.724 46.1278 40.724 46.9005V51.5833H36.1803V47.4116C36.1803 46.8703 36.0684 46.4953 35.8446 46.2866C35.6209 46.0779 35.146 45.9736 34.4187 45.9736H28.044H28.047ZM36.2529 40.4561C36.2529 40.0237 36.203 39.6714 36.1017 39.4007C36.0004 39.1301 35.8613 38.9184 35.6844 38.7626C35.5059 38.6084 35.2972 38.5041 35.0583 38.4497C34.8179 38.3952 34.5594 38.368 34.2812 38.368H28.0455V42.5639H34.2812C34.5594 42.5639 34.8179 42.5337 35.0583 42.4717C35.2972 42.4097 35.5059 42.3024 35.6844 42.1466C35.8613 41.9924 36.0004 41.7792 36.1017 41.5085C36.2015 41.2379 36.2529 40.8871 36.2529 40.4546V40.4561Z" fill="white"/>
-              <path d="M59.224 44.7444H48.1679V47.9197H59.3177V51.5819H43.6241V34.6378H59.2708V38.3H48.1679V41.4753H59.224V44.7444Z" fill="white"/>
-              <path d="M75.9351 46.645V34.6378H80.1311V51.5819H74.6136L66.3608 39.992V51.5819H62.1422V34.6378H67.5206L75.9351 46.645Z" fill="white"/>
-              <path d="M90.2151 34.6393H95.1292L103.427 51.5833H98.8383L97.2854 48.2916H88.1995L86.6466 51.5833H81.9185L90.2166 34.6393H90.2151ZM89.8204 44.8381H95.6388L92.7175 38.6719L89.8204 44.8381Z" fill="white"/>
-              <path d="M69.2065 0.585022V30.1638H62.5928V11.127L56.1742 18.6162L56.0608 18.7478L51.641 23.9084L47.2198 18.7478L47.1049 18.6162L40.7195 11.1679V30.1638H34.1073V0.585022H40.7195L51.641 13.3286L62.5595 0.585022H69.2065Z" fill="white"/>
-              <path d="M28.2829 14.6395V30.1637H13.1095C10.9261 30.1637 9.00728 29.9687 7.36368 29.5771C5.71857 29.1854 4.34715 28.4521 3.25545 27.3725C2.16375 26.2944 1.34722 24.7975 0.808925 22.8802C0.269123 20.9659 0 18.4711 0 15.394C0 12.317 0.269123 9.82213 0.808925 7.90787C1.34873 5.99361 2.16375 4.49063 3.25545 3.3944C4.34715 2.3027 5.71857 1.56028 7.36368 1.17017C9.00879 0.778551 10.9261 0.583496 13.1095 0.583496H28.2013V7.09892H13.1488C12.1508 7.09892 11.3116 7.21989 10.6373 7.46333C9.96288 7.70525 9.41706 8.1377 8.99973 8.75764C8.5824 9.37758 8.27848 10.2198 8.08947 11.2888C7.90047 12.3533 7.8067 13.7217 7.8067 15.394C7.8067 17.0664 7.90047 18.4378 8.08947 19.5023C8.27848 20.5668 8.58089 21.4105 8.99973 22.0304C9.41706 22.6504 9.96288 23.0752 10.6373 23.3051C11.3116 23.5349 12.1508 23.6483 13.1488 23.6483H21.3214V18.1943L28.2814 14.638L28.2829 14.6395Z" fill="white"/>
-              <path d="M103.636 0.583496V7.53288H92.3213V30.1622H85.3719V7.53288H74.0573V0.583496H103.636Z" fill="white"/>
-            </svg>
+          <div class="logo-footer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 104 52" fill="none">
+                <path d="M8.50529 34.6393H13.4195L21.7176 51.5833H17.1285L15.5756 48.2916H6.48971L4.93683 51.5833H0.208649L8.5068 34.6393H8.50529ZM8.11063 44.8381H13.929L11.0077 38.6719L8.11063 44.8381Z" fill="white"/>
+                <path d="M28.047 45.9736V51.5833H23.5033V34.6393H34.1194C34.9691 34.6393 35.7842 34.7058 36.5644 34.8359C37.3446 34.9674 38.0356 35.2229 38.6389 35.601C39.2422 35.9805 39.72 36.5173 40.0754 37.2113C40.4307 37.9068 40.6091 38.811 40.6091 39.9239C40.6091 40.8977 40.47 41.7081 40.1918 42.3583C39.9136 43.0085 39.5265 43.5332 39.032 43.9339C39.5567 44.197 39.971 44.5644 40.2719 45.0346C40.5728 45.5064 40.724 46.1278 40.724 46.9005V51.5833H36.1803V47.4116C36.1803 46.8703 36.0684 46.4953 35.8446 46.2866C35.6209 46.0779 35.146 45.9736 34.4187 45.9736H28.044H28.047ZM36.2529 40.4561C36.2529 40.0237 36.203 39.6714 36.1017 39.4007C36.0004 39.1301 35.8613 38.9184 35.6844 38.7626C35.5059 38.6084 35.2972 38.5041 35.0583 38.4497C34.8179 38.3952 34.5594 38.368 34.2812 38.368H28.0455V42.5639H34.2812C34.5594 42.5639 34.8179 42.5337 35.0583 42.4717C35.2972 42.4097 35.5059 42.3024 35.6844 42.1466C35.8613 41.9924 36.0004 41.7792 36.1017 41.5085C36.2015 41.2379 36.2529 40.8871 36.2529 40.4546V40.4561Z" fill="white"/>
+                <path d="M59.224 44.7444H48.1679V47.9197H59.3177V51.5819H43.6241V34.6378H59.2708V38.3H48.1679V41.4753H59.224V44.7444Z" fill="white"/>
+                <path d="M75.9351 46.645V34.6378H80.1311V51.5819H74.6136L66.3608 39.992V51.5819H62.1422V34.6378H67.5206L75.9351 46.645Z" fill="white"/>
+                <path d="M90.2151 34.6393H95.1292L103.427 51.5833H98.8383L97.2854 48.2916H88.1995L86.6466 51.5833H81.9185L90.2166 34.6393H90.2151ZM89.8204 44.8381H95.6388L92.7175 38.6719L89.8204 44.8381Z" fill="white"/>
+                <path d="M69.2065 0.585022V30.1638H62.5928V11.127L56.1742 18.6162L56.0608 18.7478L51.641 23.9084L47.2198 18.7478L47.1049 18.6162L40.7195 11.1679V30.1638H34.1073V0.585022H40.7195L51.641 13.3286L62.5595 0.585022H69.2065Z" fill="white"/>
+                <path d="M28.2829 14.6395V30.1637H13.1095C10.9261 30.1637 9.00728 29.9687 7.36368 29.5771C5.71857 29.1854 4.34715 28.4521 3.25545 27.3725C2.16375 26.2944 1.34722 24.7975 0.808925 22.8802C0.269123 20.9659 0 18.4711 0 15.394C0 12.317 0.269123 9.82213 0.808925 7.90787C1.34873 5.99361 2.16375 4.49063 3.25545 3.3944C4.34715 2.3027 5.71857 1.56028 7.36368 1.17017C9.00879 0.778551 10.9261 0.583496 13.1095 0.583496H28.2013V7.09892H13.1488C12.1508 7.09892 11.3116 7.21989 10.6373 7.46333C9.96288 7.70525 9.41706 8.1377 8.99973 8.75764C8.5824 9.37758 8.27848 10.2198 8.08947 11.2888C7.90047 12.3533 7.8067 13.7217 7.8067 15.394C7.8067 17.0664 7.90047 18.4378 8.08947 19.5023C8.27848 20.5668 8.58089 21.4105 8.99973 22.0304C9.41706 22.6504 9.96288 23.0752 10.6373 23.3051C11.3116 23.5349 12.1508 23.6483 13.1488 23.6483H21.3214V18.1943L28.2814 14.638L28.2829 14.6395Z" fill="white"/>
+                <path d="M103.636 0.583496V7.53288H92.3213V30.1622H85.3719V7.53288H74.0573V0.583496H103.636Z" fill="white"/>
+              </svg>
           </div>
           <div class="footer-desc" data-lang-toggle="social">Sosial şəbəkələrdə bizi izlə:</div>
           <div class="footer-inst">
-            <a href="https://www.instagram.com/gmt.arena" class="footer-link">
+            <a class="footer-link" href="https://www.instagram.com/gmt.arena" class="footer-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="38" height="39" viewBox="0 0 38 39" fill="none">
                 <g clip-path="url(#clip0_26_640)">
                   <path d="M22.6361 19.5832C22.6361 21.5917 21.0079 23.2199 18.9994 23.2199C16.9908 23.2199 15.3627 21.5917 15.3627 19.5832C15.3627 17.5746 16.9908 15.9465 18.9994 15.9465C21.0079 15.9465 22.6361 17.5746 22.6361 19.5832Z" fill="#F0F3FC"/>

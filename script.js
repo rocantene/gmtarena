@@ -1,75 +1,124 @@
 ///ТАЙМЕР
-// дата и время
-const targetDate = new Date('January 6, 2024 17:00:00').getTime();
+document.addEventListener("DOMContentLoaded", function() {
+  const timerElement = document.getElementById('timer');
 
-// Обновляет таймер каждую секунду
-const timerInterval = setInterval(updateTimer, 1000);
+  const targetDate = new Date('January 12, 2024 17:00:00').getTime();
+  const timerInterval = setInterval(updateTimer, 1000);
 
-function updateTimer() {
-  const currentDate = new Date().getTime();
-  const timeDifference = targetDate - currentDate;
+  function updateTimer() {
+    const currentDate = new Date().getTime();
+    const timeDifference = targetDate - currentDate;
 
-  if (timeDifference <= 0) {
-    clearInterval(timerInterval);
-    document.getElementById('timer').innerHTML = 'Время истекло!';
-  } else {
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    if (timeDifference <= 0) {
+      clearInterval(timerInterval);
+    } else {
+      const { days, hours, minutes, seconds } = calculateTimeUnits(timeDifference);
 
-    document.getElementById('timer').innerHTML =
-      `${days} days ${hours} hr ${minutes} min`;
+      timerElement.innerHTML = formatTime(days, hours, minutes, seconds);
+    }
   }
-}
+
+  function calculateTimeUnits(timeDifference) {
+    const oneDay = 1000 * 60 * 60 * 24;
+    const oneHour = 1000 * 60 * 60;
+    const oneMinute = 1000 * 60;
+
+    const days = Math.floor(timeDifference / oneDay);
+    const hours = Math.floor((timeDifference % oneDay) / oneHour);
+    const minutes = Math.floor((timeDifference % oneHour) / oneMinute);
+    const seconds = Math.floor((timeDifference % oneMinute) / 1000);
+
+    return { days, hours, minutes, seconds };
+  }
+  function formatTime(days, hours, minutes, seconds) {
+    return `${days} d ${hours} h ${minutes} min`;
+  }
+});
 
 
-//АНИМАЦИЯ ТОГЛА
+//АНИМАЦИЯ ТОГЛА (цвет и положение)
+
+document.getElementById('toggle').addEventListener('change', function () {
+  var text1 = document.querySelector('.toggle-az');
+  var text2 = document.querySelector('.toggle-ru');
+
+  if (this.checked) {
+      text1.style.color = '#FFF'; // Цвет для первого текста
+      text2.style.color = '#1170F4'; // Цвет для второго текста
+  } else {
+      text1.style.color = '#1170F4'; // Возвращаем первый цвет 
+      text2.style.color = '#FFF'; // Возвращаем второй цвет
+  }
+});
+
 document.getElementById('toggle').addEventListener('change', function() {
-    const toggleCircle = document.querySelector('.toggle-circle');
-    toggleCircle.style.transform = this.checked ? 'translateX(30px)' : 'translateX(0)';
+const toggleCircle = document.querySelector('.toggle-circle');
+toggleCircle.style.transform = this.checked ? 'translateX(30px)' : 'translateX(0)';
+
+// Вызываем функцию плавного изменения языка
+toggleLanguageSmooth();
+});
+// Функция плавного изменения языка
+function toggleLanguageSmooth() {
+// Получаем чекбокс и элементы, которые нужно изменить
+var checkbox = document.getElementById("toggle");
+var elementsToToggle = document.querySelectorAll("[data-lang-toggle]");
+
+// Определяем новый язык на основе состояния чекбокса
+var newLanguage = checkbox.checked ? "ru" : "az";
+
+// Применяем класс для скрытия текста
+elementsToToggle.forEach(function(element) {
+  element.classList.add("hidden");
+});
+
+// Задержка перед сменой текста (по длительности перехода)
+setTimeout(function() {
+  // Изменяем содержимое элементов в соответствии с новым языком
+  elementsToToggle.forEach(function(element) {
+    var textKey = element.getAttribute("data-lang-toggle");
+    element.textContent = languageData[newLanguage][textKey];
   });
 
+  // Убираем класс для отображения текста с анимацией
+  elementsToToggle.forEach(function(element) {
+    element.classList.remove("hidden");
+  });
 
-//Скрипт меняющий язык
-  function toggleLanguage() {
-    // Получаем чекбокс и элементы, которые нужно изменить
-    var checkbox = document.getElementById("toggle");
-    var elementsToToggle = document.querySelectorAll("[data-lang-toggle]");
+  // Изменяем src атрибут iframe в соответствии с новым языком
+  updateIframeSrc(newLanguage);
+}, 500); // Длительность перехода в миллисекундах (0.5 секунды)
+}
 
-    // Определяем новый язык на основе состояния чекбокса
-    var newLanguage = checkbox.checked ? "ru" : "az";
+// Функция обновления ссылки на iframe
+function updateIframeSrc(newLanguage) {
+var iframe = document.getElementById('myIframe');
+iframe.src = (newLanguage === 'ru') ? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d759.9474514783939!2d49.83905504601105!3d40.369184828622416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d410ad4f0c3%3A0xfc860b5dfbdf2cc2!2sGMT%20Arena!5e0!3m2!1sru!2saz!4v1703775272786!5m2!1sru!2saz' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1519.8969531574428!2d49.83871440834676!3d40.36909391781341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d410ad4f0c3%3A0xfc860b5dfbdf2cc2!2sGMT%20Arena!5e0!3m2!1saz!2saz!4v1703774112886!5m2!1saz!2saz';
+}
 
-    // Изменяем содержимое элементов в соответствии с новым языком
-    elementsToToggle.forEach(function (element) {
-      var textKey = element.getAttribute("data-lang-toggle");
-      element.textContent = languageData[newLanguage][textKey];
-    });
-  }
-
-  // Пример данных для переключения языка
+// Пример данных для переключения языка
   var languageData = {
     "az": {
       "hello": "Salam!",
-      "GMT Arena - это": "GMT Arena-da sizi nələr gözləyir:",
+      "GMT Arena - это": "GMT Arena-da sİzİ nələr gözləyİr:",
       "p1":"Mən Oggie, sizin sadiq dostunuz və GMT Arenanın gözəl dünyasında bələdçinizəm! Hər birinizlə unikal idman arenamızda görüşməyi səbirsizliklə gözləyirəm və həyəcanlanıram.",
       "p2":"GMT Esports komandası həmişə oyunçuların özlərini evdəki kimi hiss edə biləcəyi bir yer yaratmaq arzusunda olub. Və nəhayət, sizin üçün GMT Arenanın qapılarını açmağa hazır olduğumuz an gəlib çatdı.",
       "pc":"ədəd PC",
       "ps":"ədəd Playstation 5 oyun konsolu",
       "vip":"otaqlar",
       "dadli":"kofe bar",
-      "coffee":"dadlı kofe, sendviçlər və desertlər olan kofe bar",
-      "tv":"böyük ekranlarda dünya turnirlərinə baxmaq üçün məkan",
-      "notebook":"noutbukda işləmək üçün rahat yerlər",
+      "coffee":"dadli kofe, sendvİçlər və desertlər olan kofe bar",
+      "tv":"böyük ekranlarda dünya turnİrlərİnə baxmaq üçün məkan",
+      "notebook":"noutbukda İşləmək üçün rahat yerlər",
       "puzzle":"Stolüstü oyunlar",
-      "event":"Açılışda sizi nə gözləyir:",
+      "event":"Açilişda sİzİ nə gözləyİr:",
       "event-pc":"yeni güclü kompüterlər və PlayStation 5 ilə tanış olmaq imkanı",
       "event-cocktails":"xüsusi olaraq oyunçular üçün yaradılmış kokteyllər",
       "event-catering":"sizin üçün xüsusi hazırlanmış yemək və içkilər",
       "event-music":"DJ-dən musiqi",
       "event-tournaments":"lotereya, turnirlər və uduşlu oyunlar",
-      "address-title":"6 yanvar saat 17:00",
-      "address-subtitle":"Sizi gözləyirik",
+      "address-title":"12 yanvar saat 17:00",
+      "address-subtitle":"Sİzİ gözləyİrİk",
       "map-title":"Ünvan:",
       "map-subtitle":"Bakı şəhəri, Tərlan Əliyarbəyov küç 6",
       "social":"Sosial şəbəkələrdə bizi izlə:"
@@ -90,11 +139,11 @@ document.getElementById('toggle').addEventListener('change', function() {
       "event":"Что вас ждет на Grand Opening:",
       "event-pc":"возможность испытать новые мощные компьютеры и PlayStation 5",
       "event-cocktails":"тематические коктейли, созданные специально для геймеров",
-      "event-catering":"люда и напитки от нашего кейтеринга",
+      "event-catering":"блюда и напитки от нашего кейтеринга",
       "event-music":"зажигательное музыкальное сопровождение от диджея",
       "event-tournaments": "лотерея, турниры и розыгрыши призов",
       "address-title":"с нетерпением ждем вас",
-      "address-subtitle":"6 января в 17:00",
+      "address-subtitle":"12 января в 17:00",
       "map-title":"по адресу:",
       "map-subtitle":"6 Tarlan Aliyarbeyov St, Baku",
       "social":"Присоединяйтесь к нам в социальных сетях:"
