@@ -1,11 +1,24 @@
-  preloader
-  window.onload = function() {
-    setTimeout(function() {
-      var preloader = document.querySelector(".preloader");
-      preloader.style.display = "none";
-      document.body.style.overflow = "auto";
-    }, 3000);
-  };
+  // preloader
+  // window.onload = function() {
+  //   setTimeout(function() {
+  //     var preloader = document.querySelector(".preloader");
+  //     preloader.style.display = "none";
+  //     document.body.style.overflow = "auto";
+  //   }, 3000);
+  // };
+  window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader'); /* находим блок Preloader */
+    
+    // Устанавливаем задержку в 2000 миллисекунд (2 секунды)
+    const delayTime = 3000;
+  
+    // Запускаем таймер
+    setTimeout(() => {
+      preloader.classList.add('preloader_hidden'); /* добавляем ему класс для скрытия */
+    }, delayTime);
+  });
+
+
 
 ///ТАЙМЕР
 document.addEventListener("DOMContentLoaded", function() {
