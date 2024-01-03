@@ -1,39 +1,45 @@
 body {
  min-width: 320px;
+ overflow: hidden;
 }
 @font-face {
   font-family: "Toxigenesis";
   src: url(../fonts/toxigenesis-bd.woff2);
   src: url(../fonts/toxigenesis-bd.woff);
-  src: url(../fonts/toxigenesis-bd.ttf);
 }
 @font-face {
   font-family: "Jost";
-  src: url(../fonts/Jost-SemiBold.woff2);
-  src: url(../fonts/Jost-SemiBold.woff);
-  src: url(../fonts/Jost-SemiBold.ttf);
-  src: url(../fonts/Jost-Light.ttf);
-  src: url(../fonts/Jost-Regular.ttf);
+  src: url(../fonts/Jost-Regular.woff2);
+  src: url(../fonts/Jost-Regular.woff);
 }
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  background-color: #00031F;
+}
+.preloader img {
+  width: 100px; 
+  height: 100px; 
+}
+
 .header {
   background-color: #00031F;
   background-blend-mode: lighten;
-  /* background: no-repeat bottom right/contain url('../images/oggy.png') #00031F; */
 }
 @media screen and (min-width: 768px) {
   .header {
-      background: no-repeat bottom right/contain url('../images/oggy2.png') #00031F;
-      height: 488px;
+      background: no-repeat bottom right/contain url('../images/oggy_medium.png') #00031F;
+      min-height: 488px;
   }
 }
-@media screen and (min-width: 1199px) {
-  .header {
-      /* background: no-repeat bottom right/contain url('/images/oggy3.png') #00031F;
-      background-size: auto;
-      background-position-y: top; */
-      height: 800px;
-  }
-}
+
 @media screen and (min-width: 768px) {
   .container {
       padding: 0 30px;
@@ -191,10 +197,10 @@ input[type="checkbox"]:checked + .toggle-container {
   z-index: 1;
   color: #FFF;
   font-family: Jost;
-  font-size: 15px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 400;
-  line-height: 100%; /* 13px */
+  line-height: 120%;
 }
 @media screen and (min-width: 768px) {
   .main-text {
@@ -426,7 +432,7 @@ input[type="checkbox"]:checked + .toggle-container {
     content: "";
     display: block;
     position: absolute;
-    background: url(../images/Clip\ path\ group.png);
+    background: url(../images/face.png);
     background-repeat: no-repeat;
     width: 200px;
     height: 340px;
@@ -440,7 +446,7 @@ input[type="checkbox"]:checked + .toggle-container {
     content: "";
     display: block;
     position: absolute;
-    background: url(../images/Clip\ path\ group_big.png);
+    background: url(../images/face-big.png);
     background-repeat: no-repeat;
     width: 600px;
     height: 941px;
@@ -449,21 +455,6 @@ input[type="checkbox"]:checked + .toggle-container {
     z-index: 10;
   } 
 }
-/* @media screen and (min-width: 1920px) {
-  .event::after{
-    content: "";
-    display: block;
-    position: absolute;
-    background: url(/images/Clip\ path\ group_big.png);
-    background-repeat: no-repeat;
-    width: 600px;
-    height: 950px;
-    top: 70px;
-    left: 0px;
-    z-index: 10;
-
-  } 
-} */
 .event-tittle {
   color: #FFF;
   font-family: Toxigenesis;
@@ -525,7 +516,6 @@ input[type="checkbox"]:checked + .toggle-container {
   transition: filter 0.3s ease-in-out;
 }
 .event-list li:hover {
-  /* cursor: pointer; */
   filter: invert(1); /* Инвертирует цвет SVG при наведении */
 }
 @media screen and (min-width: 1920px) {
@@ -591,8 +581,6 @@ input[type="checkbox"]:checked + .toggle-container {
     text-transform: uppercase;
     text-align: center;
   }
-
-  
   @media screen and (min-width: 1920px) {
     .address-subtitle{
       font-size: 48px;
@@ -610,50 +598,25 @@ input[type="checkbox"]:checked + .toggle-container {
   }
   .map-subtitle {
     padding: 0 0 10px 0;
-    color: #FFF;
+    color: #1170F4;
     font-family: Toxigenesis;
     font-size: 13px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+  }
+  @media screen and (min-width: 1199px) {
+    .map-subtitle{
+      font-size: 18px; 
+    } 
   }
   .address-map {
     padding-top: 30px;
   }
-  /* @media screen and (min-width: 768px) {
-    .address-map{
-      width: 80%;
-      margin: 0 auto;
-    } 
-  } */
-
-  /* @media screen and (min-width: 1920px) {
-    .address-map{
-      width: 70%;
-      margin: 0 auto;
-      margin-right: 50px;
-        } 
-  } */
-
-
-
-
-
   .address-map iframe {
     width: 100%;
   }
-  /* .address-subtitle {
-    padding-top: 10px;
-    color: #FFF;
-    font-family: Toxigenesis;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-  } */
-
   .footer {
     background-color:#1170F4;
     padding: 15px 0 15px 0;
@@ -668,6 +631,7 @@ input[type="checkbox"]:checked + .toggle-container {
     margin-right: auto;
   }
   .footer-desc {
+    padding-left: 10px;
     color: #FFF;
     font-family: Jost;
     font-size: 15px;
@@ -680,11 +644,6 @@ input[type="checkbox"]:checked + .toggle-container {
       font-size: 16px;
     } 
   }
-  /* @media screen and (min-width: 1199px) {
-    .footer-desc{
-      font-size: 32px;
-    } 
-  } */
   .footer-inst {
     padding-left: 10px;
   }

@@ -1,3 +1,21 @@
+  ///preloader
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   setTimeout(function() {
+  //     var preloader = document.querySelector(".preloader");
+  //     preloader.style.display = "none";
+  //     document.body.style.overflow = "auto";
+  //   }, 2350);
+  // });
+
+  window.onload = function() {
+    setTimeout(function() {
+      var preloader = document.querySelector(".preloader");
+      preloader.style.display = "none";
+      document.body.style.overflow = "auto";
+    }, 2000);
+  };
+
+
 ///ТАЙМЕР
 document.addEventListener("DOMContentLoaded", function() {
   const timerElement = document.getElementById('timer');
@@ -145,7 +163,7 @@ iframe.src = (newLanguage === 'ru') ? 'https://www.google.com/maps/embed?pb=!1m1
       "address-title":"с нетерпением ждем вас",
       "address-subtitle":"12 января в 17:00",
       "map-title":"по адресу:",
-      "map-subtitle":"6 Tarlan Aliyarbeyov St, Baku",
+      "map-subtitle":"Баку, улица Тарлана Алиярбекова, 6",
       "social":"Присоединяйтесь к нам в социальных сетях:"
     }
   };
