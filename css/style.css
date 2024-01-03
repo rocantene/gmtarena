@@ -24,7 +24,7 @@ body {
   z-index: 11;
   background-color: #00031F;
   opacity: 1;
-  transition: opacity 100ms ease; /* Анимация плавного исчезновения */
+  transition: opacity 100ms ease;
 }
 .preloader img {
   width: 300px; 
