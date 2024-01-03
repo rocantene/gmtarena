@@ -1,18 +1,23 @@
   ///preloader
-  // document.addEventListener("DOMContentLoaded", function() {
+
+  // window.onload = function() {
   //   setTimeout(function() {
   //     var preloader = document.querySelector(".preloader");
   //     preloader.style.display = "none";
   //     document.body.style.overflow = "auto";
-  //   }, 2350);
-  // });
+  //   }, 2500);
+  // };
 
   window.onload = function() {
+    // Переменная для хранения состояния прелоудера
+    var preloader = document.querySelector(".preloader");
+    // Показываем прелоудер
+    preloader.style.display = "flex";
+    // Задержка перед скрытием прелоудера
     setTimeout(function() {
-      var preloader = document.querySelector(".preloader");
       preloader.style.display = "none";
       document.body.style.overflow = "auto";
-    }, 2000);
+    }, 2500);
   };
 
 
