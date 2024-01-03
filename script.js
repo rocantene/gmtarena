@@ -1,25 +1,11 @@
-  ///preloader
-
-  // window.onload = function() {
-  //   setTimeout(function() {
-  //     var preloader = document.querySelector(".preloader");
-  //     preloader.style.display = "none";
-  //     document.body.style.overflow = "auto";
-  //   }, 2500);
-  // };
-
+  preloader
   window.onload = function() {
-    // Переменная для хранения состояния прелоудера
-    var preloader = document.querySelector(".preloader");
-    // Показываем прелоудер
-    preloader.style.display = "flex";
-    // Задержка перед скрытием прелоудера
     setTimeout(function() {
+      var preloader = document.querySelector(".preloader");
       preloader.style.display = "none";
       document.body.style.overflow = "auto";
-    }, 2500);
+    }, 3000);
   };
-
 
 ///ТАЙМЕР
 document.addEventListener("DOMContentLoaded", function() {
@@ -57,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function() {
     return `${days} d ${hours} h ${minutes} min`;
   }
 });
-
 
 //АНИМАЦИЯ ТОГЛА (цвет и положение)
 
@@ -109,14 +94,20 @@ setTimeout(function() {
   });
 
   // Изменяем src атрибут iframe в соответствии с новым языком
-  updateIframeSrc(newLanguage);
+  changeLanguage(newLanguage);
 }, 500); // Длительность перехода в миллисекундах (0.5 секунды)
 }
+function changeLanguage(newLanguage) {
+  var iframe = document.getElementById('myIframe');
+  var iframeSrc = '';
 
-// Функция обновления ссылки на iframe
-function updateIframeSrc(newLanguage) {
-var iframe = document.getElementById('myIframe');
-iframe.src = (newLanguage === 'ru') ? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d759.9474514783939!2d49.83905504601105!3d40.369184828622416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d410ad4f0c3%3A0xfc860b5dfbdf2cc2!2sGMT%20Arena!5e0!3m2!1sru!2saz!4v1703775272786!5m2!1sru!2saz' : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1519.8969531574428!2d49.83871440834676!3d40.36909391781341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d410ad4f0c3%3A0xfc860b5dfbdf2cc2!2sGMT%20Arena!5e0!3m2!1saz!2saz!4v1703774112886!5m2!1saz!2saz';
+  if (newLanguage === 'ru') {
+    iframeSrc = 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1519.8976910014678!2d49.8399938!3d40.3690612!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d410ad4f0c3%3A0xfc860b5dfbdf2cc2!2sGMT%20Arena!5e0!3m2!1sru!2saz!4v1704314786844!5m2!1sru!2saz';
+  } else {
+    iframeSrc = 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1519.8953862107353!2d49.8390926!3d40.3691634!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d410ad4f0c3%3A0xfc860b5dfbdf2cc2!2sGMT%20Arena!5e0!3m2!1saz!2saz!4v1704314875301!5m2!1saz!2saz';
+  }
+
+  iframe.src = iframeSrc;
 }
 
 // Пример данных для переключения языка
