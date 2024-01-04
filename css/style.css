@@ -1,6 +1,14 @@
 body {
- min-width: 320px;
- /* overflow: hidden; */
+  min-width: 320px;
+  scrollbar-width: thin;
+  scrollbar-color: #1170F4 transparent;
+}
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1170F4;
 }
 @font-face {
   font-family: "Toxigenesis";
@@ -24,7 +32,7 @@ body {
   z-index: 11;
   background-color: #00031F;
   opacity: 1;
-  transition: opacity 100ms ease;
+  transition: opacity 500ms ease;
 }
 .preloader img {
   width: 300px; 
